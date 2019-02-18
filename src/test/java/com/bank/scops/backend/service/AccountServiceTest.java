@@ -21,10 +21,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class ApplicationOrchestratorTest {
+class AccountServiceTest {
 
     @InjectMocks
-    private ApplicationOrchestrator applicationOrchestrator;
+    private AccountService accountService;
 
     @Mock
     private AccountCoreGateway accountCoreGateway;
@@ -41,7 +41,7 @@ class ApplicationOrchestratorTest {
 
     @Test
     void checkFieldsAfterMapCoreDataToBff() {
-        List<AccountBffResume> accountBffResumes = applicationOrchestrator.retrieveAccountBffResume();
+        List<AccountBffResume> accountBffResumes = accountService.retrieveAccountBffResume();
         assertNotNull(accountBffResumes, "Response is not null");
         Assert.assertEquals("BBF account resume has one element",1,accountBffResumes.size());
     }

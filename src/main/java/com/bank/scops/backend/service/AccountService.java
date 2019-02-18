@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ApplicationOrchestrator {
+public class AccountService {
 
     private AccountCoreGateway accountCoreGateway;
 
     private MapperAccountResumeCoreToBffAccountResume mapperAccountResumeCoreToBffAccountResume;
 
-    public ApplicationOrchestrator(AccountCoreGateway accountCoreGateway, MapperAccountResumeCoreToBffAccountResume mapperAccountResumeCoreToBffAccountResume) {
+    public AccountService(AccountCoreGateway accountCoreGateway, MapperAccountResumeCoreToBffAccountResume mapperAccountResumeCoreToBffAccountResume) {
         this.accountCoreGateway = accountCoreGateway;
         this.mapperAccountResumeCoreToBffAccountResume = mapperAccountResumeCoreToBffAccountResume;
     }

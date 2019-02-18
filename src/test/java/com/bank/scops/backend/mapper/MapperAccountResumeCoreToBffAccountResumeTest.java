@@ -10,11 +10,12 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static com.bank.scops.backend.utils.TestHelper.buildCoreAccountResume;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class MapperAccountResumeCoreToBffAccountCoreResumeTest {
+class MapperAccountResumeCoreToBffAccountResumeTest {
 
     @InjectMocks
     private MapperAccountResumeCoreToBffAccountResume mapperAccountResumeCoreToBffAccountResume;
@@ -22,9 +23,8 @@ class MapperAccountResumeCoreToBffAccountCoreResumeTest {
     @Mock
     private AmountFormatter amountFormatter;
 
-
     @Test
-    public void checkAllFieldsPropagateTheRightValuesAfterMapFunctionHasBeenAiled() {
+    void mapAccountBffResume() {
         when(amountFormatter.formatAmount(any())).thenReturn("$1.995.045");
         AccountCoreResume accountCoreResume = buildCoreAccountResume();
         AccountBffResume accountBffResume = mapperAccountResumeCoreToBffAccountResume.mapAccountBffResume(accountCoreResume);
@@ -35,8 +35,5 @@ class MapperAccountResumeCoreToBffAccountCoreResumeTest {
         Assert.assertEquals("Check value for description","CUENTA-CORRIENTE", accountBffResume.getDescripcion());
         Assert.assertNotNull("check saldo is there", accountBffResume.getSaldo());
         Assert.assertEquals("check value for saldo ","$1.995.045", accountBffResume.getSaldo());
-
     }
-
-
 }
