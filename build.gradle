@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.19.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example.bank'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+	testCompile 'org.mockito:mockito-core:2.19.0'
+	testCompile 'org.mockito:mockito-junit-jupiter:2.19.0'
+	compileOnly 'org.projectlombok:lombok:1.18.0'
+	compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+	compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+	compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+	testCompile group: 'org.springframework.cloud', name: 'spring-cloud-contract-wiremock', version: '2.0.2.RELEASE'
+
+}
