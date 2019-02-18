@@ -23,7 +23,7 @@ public class AccountCoreGateway {
         this.gatewayRestTemplate = gatewayRestTemplate;
     }
 
-    public List<AccountCoreResume> retrieveData() {
+    public List<AccountCoreResume> retrieveAccountData() {
         Class<AccountCoreResume[]> responseType = AccountCoreResume[].class;
         ResponseEntity<AccountCoreResume[]> forEntity = gatewayRestTemplate.getForEntity(urlAccountCoreResumeService, responseType);
         return Arrays.asList(forEntity.getBody());

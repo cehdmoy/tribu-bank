@@ -23,7 +23,7 @@ public class AccountService {
 
     public List<AccountBffResume> retrieveAccountBffResume()
     {
-        List<AccountCoreResume> accountCoreResumes = accountCoreGateway.retrieveData();
+        List<AccountCoreResume> accountCoreResumes = accountCoreGateway.retrieveAccountData();
         return buildAccountBFF(accountCoreResumes);
     }
 

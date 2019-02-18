@@ -42,7 +42,7 @@ class AccountCoreGatewayTest {
 
     @Test
     void retrieveData() {
-        List<AccountCoreResume> accountCoreResumeList = accountCoreGateway.retrieveData();
+        List<AccountCoreResume> accountCoreResumeList = accountCoreGateway.retrieveAccountData();
         Assert.assertNotNull("Check response from rest template gateway is not null", accountCoreResumeList);
         Assert.assertEquals(1,accountCoreResumeList.size());
         Assert.assertEquals("someAccountId",accountCoreResumeList.get(0).getAccountId());

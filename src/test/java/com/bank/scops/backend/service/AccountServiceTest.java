@@ -35,7 +35,7 @@ class AccountServiceTest {
     @BeforeEach
     void setUp() {
         List<AccountCoreResume> accountCoreResumeList = buildCoreAccountResumeResponse();
-        when(accountCoreGateway.retrieveData()).thenReturn(accountCoreResumeList);
+        when(accountCoreGateway.retrieveAccountData()).thenReturn(accountCoreResumeList);
         when(mapperAccountResumeCoreToBffAccountResume.mapAccountBffResume(any())).thenReturn(buildAccountBffResume());
     }
 
