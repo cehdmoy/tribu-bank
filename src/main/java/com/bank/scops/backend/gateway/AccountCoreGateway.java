@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class AccountCoreGateway {
 
-    private String urlAccountCoreResumeService;
+    private String urlAccountCoreResumeService="localhost:8080/account";
 
     private RestOperations gatewayRestTemplate;
 
@@ -24,7 +24,8 @@ public class AccountCoreGateway {
     }
 
     public List<AccountCoreResume> retrieveData() {
-        ResponseEntity<AccountCoreResume[]> forEntity = gatewayRestTemplate.getForEntity(urlAccountCoreResumeService, AccountCoreResume[].class);
+        Class<AccountCoreResume[]> responseType = AccountCoreResume[].class;
+        ResponseEntity<AccountCoreResume[]> forEntity = gatewayRestTemplate.getForEntity(urlAccountCoreResumeService, responseType);
         return Arrays.asList(forEntity.getBody());
     }
 
