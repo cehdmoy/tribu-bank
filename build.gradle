@@ -27,7 +27,7 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
 	testCompile 'org.mockito:mockito-core:2.19.0'
 	testCompile 'org.mockito:mockito-junit-jupiter:2.19.0'
-	compileOnly 'org.projectlombok:lombok:1.18.0'
+	compileOnly 'org.projectlombok:lombok:1.16.20'
 	compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
 	compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
 	compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
