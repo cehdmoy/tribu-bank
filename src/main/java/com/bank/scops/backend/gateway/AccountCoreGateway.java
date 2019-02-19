@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class AccountCoreGateway {
 
-    private String urlAccountCoreResumeService="localhost:8080/account";
+    private String urlAccountCoreResumeService;
 
     private RestOperations gatewayRestTemplate;
 
