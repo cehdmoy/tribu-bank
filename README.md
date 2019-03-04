@@ -1,5 +1,5 @@
 # tribu-bank 1
-
+<p>
 Given this origen data from some "core service"
 
 [
@@ -45,4 +45,4 @@ output should look like
         "saldo": "$6.249.308"
     }
 ]
-
+</p>
