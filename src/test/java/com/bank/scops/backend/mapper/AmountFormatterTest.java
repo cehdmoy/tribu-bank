@@ -1,7 +1,6 @@
 package com.bank.scops.backend.mapper;
 
 import org.junit.Test;
-import org.mockito.InjectMocks;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class AmountFormatterTest {
 
-    @InjectMocks
     private AmountFormatter amountFormatter = new AmountFormatter();
 
     @Test
